@@ -12,17 +12,16 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-public class FragmentMain extends Fragment {
+public class FragmentQ7 extends Fragment {
 
-    Button btnStartSurvey;
-    RatingBar ratingBar1;
-    RatingBar ratingBar2;
-    RatingBar ratingBar3;
+    Button btnPrev7;
+    Button btnNext7;
+    RatingBar ratingBar7;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_main, container, false);
+        View view = inflater.inflate(R.layout.fragment_q7, container, false);
         findByViewIds(view);
         addListeners(view);
 
@@ -34,17 +33,16 @@ public class FragmentMain extends Fragment {
     }
 
     private void findByViewIds(View view) {
-        btnStartSurvey = view.findViewById(R.id.btnStartSurvey);
-        ratingBar1 = view.findViewById(R.id.ratingBar1);
-        ratingBar2 = view.findViewById(R.id.ratingBar2);
-        ratingBar3 = view.findViewById(R.id.ratingBar3);
+        btnPrev7 = view.findViewById(R.id.btnPrev7);
+        btnNext7 = view.findViewById(R.id.btnNext7);
+        ratingBar7 = view.findViewById(R.id.ratingBar7);
     }
 
     private void btnSubmitAddListener() {
-        btnStartSurvey.setOnClickListener(new View.OnClickListener() {
+        btnNext7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((MainActivity) getActivity()).changeFragment(new FragmentQ1());
+                ((MainActivity) getActivity()).changeFragment(new FragmentQ8());
             }
         });
     }
