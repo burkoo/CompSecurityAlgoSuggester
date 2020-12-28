@@ -42,6 +42,7 @@ public class FragmentQ10 extends Fragment {
         btnEndSurvey.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ((MainActivity) getActivity()).setQ10Answer(ratingBar10.getRating());
                 ((MainActivity) getActivity()).endSurvey();
             }
         });

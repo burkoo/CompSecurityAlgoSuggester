@@ -20,6 +20,9 @@ public class MainActivity extends AppCompatActivity {
     float q9Answer;
     float q10Answer;
 
+    float surveyScore = 0;
+    String currentResult;
+
     private static final String TAG = "mytag";
 
     @Override
@@ -46,12 +49,44 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void endSurvey(){
+        boolean hasPrevDB = false;
 
-        Log.i(TAG, Float. toString(q3Answer));
+        if(q1Answer){
+            surveyScore += 30;
+        }
+
+        if(q2Answer){
+            hasPrevDB = true;
+        }
+
+        surveyScore += (q3Answer*2) + (q4Answer*2.5) + (q5Answer*1) + (q6Answer*1) + (q7Answer*1.5) + (q8Answer*0.5) + (q9Answer*1) + (q10Answer*0.5);
+
+        if(hasPrevDB){
+            if(surveyScore <= 30){
+                currentResult = "Signature Based SVM";
+            } else if ( surveyScore <= 70){
+                currentResult = "Hybrid DT";
+            } else if( surveyScore <= 130){
+                currentResult = "Hybrid KNN";
+            }
+        } else {
+            if(surveyScore <= 30){
+                currentResult = "Anomaly Based SVM";
+            } else if ( surveyScore <= 70){
+                currentResult = "Anomaly Based DT";
+            } else if( surveyScore <= 130){
+                currentResult = "Anomaly Based KNN";
+            }
+        }
+
+        Log.i(TAG, Float. toString(surveyScore));
+        Log.i(TAG, currentResult);
+
+        changeFragment(new FragmentResult());
 
     }
 
-    public boolean isQ1Answer() {
+    public boolean getQ1Answer() {
         return q1Answer;
     }
 
@@ -59,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
         this.q1Answer = q1Answer;
     }
 
-    public boolean isQ2Answer() {
+    public boolean getQ2Answer() {
         return q2Answer;
     }
 
@@ -129,5 +164,21 @@ public class MainActivity extends AppCompatActivity {
 
     public void setQ10Answer(float q10Answer) {
         this.q10Answer = q10Answer;
+    }
+
+    public String getCurrentResult() {
+        return currentResult;
+    }
+
+    public void setCurrentResult(String currentResult) {
+        this.currentResult = currentResult;
+    }
+
+    public float getSurveyScore() {
+        return surveyScore;
+    }
+
+    public void setSurveyScore(float surveyScore) {
+        this.surveyScore = surveyScore;
     }
 }

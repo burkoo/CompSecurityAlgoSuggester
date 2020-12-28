@@ -43,6 +43,7 @@ public class FragmentQ5 extends Fragment {
         btnNext5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ((MainActivity) getActivity()).setQ5Answer(ratingBar5.getRating());
                 ((MainActivity) getActivity()).changeFragment(new FragmentQ6());
             }
         });
