@@ -15,8 +15,8 @@ import androidx.fragment.app.Fragment;
 public class FragmentQ2 extends Fragment {
 
     Button btnPrev2;
-    Button btnNext2;
-    RatingBar ratingBar2;
+    Button btnNo2;
+    Button btnYes2;
 
     @Nullable
     @Override
@@ -29,20 +29,40 @@ public class FragmentQ2 extends Fragment {
     }
 
     private void addListeners(View view) {
-        btnSubmitAddListener();
+        btnYes2AddListener();
+        btnNo2AddListener();
+        btnPrev2AddListener();
     }
 
     private void findByViewIds(View view) {
         btnPrev2 = view.findViewById(R.id.btnPrev2);
-        btnNext2 = view.findViewById(R.id.btnNext2);
-        ratingBar2 = view.findViewById(R.id.ratingBar2);
+        btnNo2 = view.findViewById(R.id.btnNo2);
+        btnYes2 = view.findViewById(R.id.btnYes2);
     }
 
-    private void btnSubmitAddListener() {
-        btnNext2.setOnClickListener(new View.OnClickListener() {
+    private void btnYes2AddListener() {
+        btnYes2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ((MainActivity) getActivity()).setQ2Answer(true);
                 ((MainActivity) getActivity()).changeFragment(new FragmentQ3());
+            }
+        });
+    }
+    private void btnNo2AddListener() {
+        btnNo2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((MainActivity) getActivity()).setQ2Answer(false);
+                ((MainActivity) getActivity()).changeFragment(new FragmentQ3());
+            }
+        });
+    }
+    private void btnPrev2AddListener() {
+        btnPrev2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((MainActivity) getActivity()).popBackFragment();
             }
         });
     }

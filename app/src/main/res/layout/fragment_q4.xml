@@ -6,13 +6,13 @@
 
     <TextView
         android:id="@+id/question4"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/ratingBar4"
-        android:text="Is this question 1 ?"/>
+        android:text="How much cost will any attack cause on this device in terms of physical harm? (For example: a hacked oven can start a fire)"/>
 
 
     <RatingBar

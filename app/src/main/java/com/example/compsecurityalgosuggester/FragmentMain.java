@@ -15,9 +15,6 @@ import androidx.fragment.app.Fragment;
 public class FragmentMain extends Fragment {
 
     Button btnStartSurvey;
-    RatingBar ratingBar1;
-    RatingBar ratingBar2;
-    RatingBar ratingBar3;
 
     @Nullable
     @Override
@@ -35,9 +32,6 @@ public class FragmentMain extends Fragment {
 
     private void findByViewIds(View view) {
         btnStartSurvey = view.findViewById(R.id.btnStartSurvey);
-        ratingBar1 = view.findViewById(R.id.ratingBar1);
-        ratingBar2 = view.findViewById(R.id.ratingBar2);
-        ratingBar3 = view.findViewById(R.id.ratingBar3);
     }
 
     private void btnSubmitAddListener() {

@@ -29,7 +29,8 @@ public class FragmentQ5 extends Fragment {
     }
 
     private void addListeners(View view) {
-        btnSubmitAddListener();
+        btnNext5AddListener();
+        btnPrev5AddListener();
     }
 
     private void findByViewIds(View view) {
@@ -38,11 +39,20 @@ public class FragmentQ5 extends Fragment {
         ratingBar5 = view.findViewById(R.id.ratingBar5);
     }
 
-    private void btnSubmitAddListener() {
+    private void btnNext5AddListener() {
         btnNext5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ((MainActivity) getActivity()).changeFragment(new FragmentQ6());
+            }
+        });
+    }
+
+    private void btnPrev5AddListener() {
+        btnPrev5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((MainActivity) getActivity()).popBackFragment();
             }
         });
     }

@@ -29,7 +29,7 @@ public class FragmentQ6 extends Fragment {
     }
 
     private void addListeners(View view) {
-        btnSubmitAddListener();
+        btnNext6AddListener();
     }
 
     private void findByViewIds(View view) {
@@ -38,7 +38,7 @@ public class FragmentQ6 extends Fragment {
         ratingBar6 = view.findViewById(R.id.ratingBar6);
     }
 
-    private void btnSubmitAddListener() {
+    private void btnNext6AddListener() {
         btnNext6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

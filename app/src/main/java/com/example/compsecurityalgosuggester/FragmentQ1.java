@@ -15,8 +15,8 @@ import androidx.fragment.app.Fragment;
 
 public class FragmentQ1 extends Fragment {
 
-    Button btnNext1;
-    RatingBar ratingBar1;
+    Button btnYes1;
+    Button btnNo1;
 
     @Nullable
     @Override
@@ -29,18 +29,29 @@ public class FragmentQ1 extends Fragment {
     }
 
     private void addListeners(View view) {
-        btnSubmitAddListener();
+        btnYes2AddListener();
+        btnNo2AddListener();
     }
 
     private void findByViewIds(View view) {
-        btnNext1 = view.findViewById(R.id.btnNext1);
-        ratingBar1 = view.findViewById(R.id.ratingBar1);
+        btnNo1 = view.findViewById(R.id.btnNo1);
+        btnYes1 = view.findViewById(R.id.btnYes1);
     }
 
-    private void btnSubmitAddListener() {
-        btnNext1.setOnClickListener(new View.OnClickListener() {
+    private void btnYes2AddListener() {
+        btnYes1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ((MainActivity) getActivity()).setQ1Answer(true);
+                ((MainActivity) getActivity()).changeFragment(new FragmentQ2());
+            }
+        });
+    }
+    private void btnNo2AddListener() {
+        btnNo1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((MainActivity) getActivity()).setQ1Answer(false);
                 ((MainActivity) getActivity()).changeFragment(new FragmentQ2());
             }
         });

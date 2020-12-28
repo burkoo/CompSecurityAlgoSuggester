@@ -29,7 +29,8 @@ public class FragmentQ3 extends Fragment {
     }
 
     private void addListeners(View view) {
-        btnSubmitAddListener();
+        btnNext3AddListener();
+        btnPrev3AddListener();
     }
 
     private void findByViewIds(View view) {
@@ -38,11 +39,20 @@ public class FragmentQ3 extends Fragment {
         ratingBar3 = view.findViewById(R.id.ratingBar3);
     }
 
-    private void btnSubmitAddListener() {
+    private void btnNext3AddListener() {
         btnNext3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ((MainActivity) getActivity()).setQ3Answer(ratingBar3.getRating());
                 ((MainActivity) getActivity()).changeFragment(new FragmentQ4());
+            }
+        });
+    }
+    private void btnPrev3AddListener() {
+        btnPrev3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((MainActivity) getActivity()).popBackFragment();
             }
         });
     }

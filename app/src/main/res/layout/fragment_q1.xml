@@ -11,31 +11,30 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/ratingBar1"
-        android:text="Is this question 1 ?"/>
+        app:layout_constraintBottom_toTopOf="@+id/btnNo1"
+        android:text="Is this IoT device being used for security purposes? \n (For example: Garage door)"/>
 
-
-    <RatingBar
-        android:id="@+id/ratingBar1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:numStars="10"
-        app:layout_constraintBottom_toTopOf="@+id/btnNext1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/question1"
-        style="@style/MyRatingBar"
-        android:isIndicator="false"/>
 
     <Button
-        android:id="@+id/btnNext1"
+        android:id="@+id/btnNo1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/ratingBar1"
+        app:layout_constraintTop_toBottomOf="@id/question1"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnYes1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="No"/>
+
+    <Button
+        android:id="@+id/btnYes1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/question1"
+        app:layout_constraintStart_toEndOf="@id/btnNo1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:text="Next"/>
+        android:text="Yes"/>
+
 
 
 

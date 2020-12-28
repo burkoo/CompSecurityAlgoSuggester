@@ -6,13 +6,13 @@
 
     <TextView
         android:id="@+id/question7"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/ratingBar7"
-        android:text="Is this question 1 ?"/>
+        android:text="How much computation power does this device have?"/>
 
 
     <RatingBar
